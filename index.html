@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dormir con Llamas - EcoRanchos | Maimará, Jujuy</title>
+    
+    <!-- Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        adobe: {
+                            50: '#fdf8f5',
+                            100: '#f9eee8',
+                            200: '#f3dad0',
+                            500: '#d97757',
+                            600: '#c25838',
+                            700: '#a14226',
+                            800: '#843823',
+                            900: '#6d2c18'
+                        },
+                        andes: {
+                            green: '#2d5a27',
+                            lightgreen: '#edf5ec',
+                            gold: '#d4a373',
+                            sand: '#f4e0c8',
+                            sky: '#e0f2fe'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-adobe-50 text-gray-800 antialiased selection:bg-adobe-500 selection:text-white">
+
+    <!-- BARRA DE NAVEGACIÓN FIJA -->
+    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo del Alojamiento -->
+                <a href="#inicio" class="flex items-center gap-3">
+                    <img src="imagenes/logo.png" alt="Logo Dormir con Llamas EcoRanchos" class="w-12 h-12 object-contain rounded-full border border-adobe-200" onerror="this.onerror=null;">
+                    <div>
+                        <span class="text-xl font-extrabold text-adobe-800 tracking-tight block leading-tight">EcoRanchos</span>
+                        <span class="text-xs text-andes-green font-semibold tracking-wider uppercase block">Dormir con Llamas</span>
+                    </div>
+                </a>
+
+                <!-- Menú Desktop -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
+                    <a href="#inicio" class="hover:text-adobe-600 transition-colors">Inicio</a>
+                    <a href="#alojamiento" class="hover:text-adobe-600 transition-colors">Alojamiento</a>
+                    <a href="#experiencias" class="hover:text-adobe-600 transition-colors">Experiencias</a>
+                    <a href="#sustentabilidad" class="hover:text-adobe-600 transition-colors">Sustentabilidad</a>
+                    <a href="#entorno" class="hover:text-adobe-600 transition-colors">Maimará</a>
+                    <a href="#reserva" class="bg-adobe-600 hover:bg-adobe-700 text-white px-5 py-2.5 rounded-full font-semibold shadow-sm hover:shadow transition-all flex items-center gap-1.5">
+                        <span>Reservar (-10% OFF)</span>
+                    </a>
+                </nav>
+
+                <!-- Botón Menú Móvil -->
+                <button id="mobile-menu-button" type="button" class="md:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none" aria-label="Abrir Menú">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-adobe-50">Inicio</a>
+            <a href="#alojamiento" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-adobe-50">Nuestros Ranchos</a>
+            <a href="#experiencias" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-adobe-50">Caminatas con Llamas</a>
+            <a href="#sustentabilidad" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-adobe-50">Filosofía Ecológica</a>
+            <a href="#entorno" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-adobe-50">Entorno y Maimará</a>
+            <a href="#reserva" class="mobile-link block px-3 py-3 rounded-xl text-center font-bold bg-adobe-600 text-white shadow">Reservar Directo (-10% OFF)</a>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HERO PRINCIPAL CON IMAGEN LOCAL DE FONDO -->
+    <section id="inicio" class="relative pt-28 pb-20 md:pt-36 md:pb-28 flex items-center min-h-[90vh] bg-gray-900 overflow-hidden">
+        <!-- Imagen de Fondo Hero -->
+        <img src="imagenes/hero-paisaje.jpg" alt="Paisaje de Maimara y Cabaña EcoRanchos" class="absolute inset-0 w-full h-full object-cover opacity-50 z-0" onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/843823/ffffff?text=imagenes/hero-paisaje.jpg';">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center text-white relative z-10">
+            <!-- Badge de Ubicación -->
+            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-amber-200 border border-white/30 mb-6">
+                <span>Maimará, Quebrada de Humahuaca, Jujuy</span>
+            </div>
+
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-medium tracking-wide text-white/90 mb-6 leading-relaxed max-w-3xl mx-auto">
+                Desconecta del ruido y duerme rodeado de llamas
+            </h1>
+            <p class=text-lg sm:text-xl text-gray-100 max-w-2xl mx-auto mb-8 font-light leading-relaxed drop-shadow">
+                Una experiencia auténtica de turismo sustentable en cabañas ecológicas de adobe.
+            </p>
+
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+    <!-- Botón 1: Reservar Directo -->
+    <a href="#reserva" class="inline-flex items-center justify-center px-5 py-2.5 text-sm sm:text-base font-medium rounded-full text-white bg-[#C85A32] hover:bg-[#b04b26] transition-all shadow-md">
+        Reservar Directo (-10% OFF)
+    </a>
+
+    <!-- Botón 2: Conocer la Experiencia -->
+    <a href="#experiencias" class="inline-flex items-center justify-center px-5 py-2.5 text-sm sm:text-base font-medium rounded-full text-white bg-black/40 hover:bg-black/60 border border-white/30 backdrop-blur-sm transition-all">
+        Conocer la Experiencia
+    </a>
+</div>
+
+            <!-- Grid de características destacadas -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto mt-8">
+    
+    <!-- Tarjeta 1 -->
+    <div class="flex items-center justify-center gap-2 p-3 sm:p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 text-white text-center shadow-sm">
+        <!-- Puedes incluir aquí tu ícono SVG si lo usas -->
+        <span class="text-xs sm:text-sm font-medium leading-tight">Cabañas Ecológicas</span>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="flex items-center justify-center gap-2 p-3 sm:p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 text-white text-center shadow-sm">
+        <span class="text-xs sm:text-sm font-medium leading-tight">Paseo con Llamas</span>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="flex items-center justify-center gap-2 p-3 sm:p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 text-white text-center shadow-sm">
+        <span class="text-xs sm:text-sm font-medium leading-tight">WiFi &amp; Estacionamiento</span>
+    </div>
+
+    <!-- Tarjeta 4 -->
+    <div class="flex items-center justify-center gap-2 p-3 sm:p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 text-white text-center shadow-sm">
+        <span class="text-xs sm:text-sm font-medium leading-tight">Desayuno Regional</span>
+    </div>
+
+</div>
+    </section>
+
+    <!-- BANNER RESERVA DIRECTA SIN INTERMEDIARIOS -->
+    <div class="bg-andes-green text-white py-4 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left text-sm font-medium">
+            <div class="flex items-center justify-center gap-2">
+                <span class="text-xl">💡</span>
+                <span><strong>¿Por qué reservar directo?</strong> Sin comisiones de intermediarios, mejor precio garantizado y contacto directo con los anfitriones.</span>
+            </div>
+            <a href="#reserva" class="underline hover:text-amber-200 font-bold whitespace-nowrap">Ir al cotizador directo &rarr;</a>
+        </div>
+    </div>
+
+    <!-- SECCIÓN ALOJAMIENTO / NUESTROS RANCHOS -->
+    <section id="alojamiento" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-adobe-600 font-bold text-sm tracking-wider uppercase block mb-2">Comodidad y Calidez</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Nuestras Cabañas & Ranchos</h2>
+                <p class="mt-4 text-gray-600 text-lg">
+                    Espacios rústicos de diseño bioclimático equipados con cocina, vajilla, blanquería de calidad y vistas inigualables al Paleta del Pintor.
+                </p>
+            </div>
+
+            <!-- GRID CABAÑAS CON IMAGEN LOCAL PRINCIPAL -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <!-- TARJETA CABAÑA 1 -->
+                <div class="bg-adobe-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-adobe-100 flex flex-col">
+                    <div class="relative h-60 overflow-hidden bg-gray-200">
+                        <img src="imagenes/cabana-principal.jpg" alt="Cabaña de adobe EcoRanchos" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/a14226/ffffff?text=imagenes/cabana-principal.jpg';">
+                        <span class="absolute top-4 right-4 bg-adobe-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow">
+                            Hasta 2 Personas
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Rancho Intimidad</h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                                Ideal para parejas o viajeros solos. Ambiente acogedor con cama matrimonial, grandes ventanales y luz natural.
+                            </p>
+                            <ul class="text-xs text-gray-600 space-y-2 mb-6">
+                                <li class="flex items-center gap-2">✅ 1 Cama Matrimonial de gran tamaño</li>
+                                <li class="flex items-center gap-2">✅ Baño ecológico privado</li>
+                                <li class="flex items-center gap-2">✅ Calefacción ecológica</li>
+                                <li class="flex items-center gap-2">✅ Patio exterior</li>
+                                <li class="flex items-center gap-2">✅ WiFi liberado</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="pt-4 border-t border-adobe-200 flex items-center justify-between mb-4">
+                                <span class="text-xs text-gray-500">Paseo con llamas incl.</span>
+                                <span class="text-xs font-bold text-andes-green bg-andes-lightgreen px-2.5 py-1 rounded-md">Desayuno incluido</span>
+                            </div>
+                            <a href="#reserva" onclick="selectRancho('Rancho Intimidad (hasta 2 pers)')" class="block text-center bg-gray-900 hover:bg-adobe-600 text-white font-bold py-3 px-4 rounded-xl transition-colors text-sm">
+                                Cotizar este Rancho
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+ <!-- TARJETA CABAÑA 2 -->
+                <div class="bg-adobe-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-adobe-200 flex flex-col h-full">
+                    <div class="relative h-60 overflow-hidden bg-gray-200">
+                        <img src="imagenes/cabana-triple.jpg" alt="Rancho Cardones con vistas" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/a14226/ffffff?text=imagenes/cabana-triple.jpg';">
+                        <span class="absolute top-4 right-4 bg-adobe-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow">
+                            Hasta 3 Personas
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Rancho Cardones</h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed min-h-[4rem]">
+                                Cabaña espaciosa para familias pequeñas o parejas que buscan amplitud. Galería privada para tomar mate frente al parque.
+                            </p>
+                            <ul class="text-xs text-gray-600 space-y-2 mb-6">
+                                <li class="flex items-center gap-2">✅ Cama Matrimonial + 1 Cama individual adicional</li>
+                                <li class="flex items-center gap-2">✅ Baño ecológico privado</li>
+                                <li class="flex items-center gap-2">✅ Calefacción ecológica</li>
+                                <li class="flex items-center gap-2">✅ Patio exterior</li>
+                                <li class="flex items-center gap-2">✅ WiFi + Estacionamiento junto al rancho</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto">
+                            <div class="pt-4 border-t border-adobe-200 flex items-center justify-between mb-4">
+                                <span class="text-xs text-gray-500">Mascotas pet-friendly</span>
+                                <span class="text-xs font-bold text-andes-green bg-andes-lightgreen px-2.5 py-1 rounded-md">Desayuno incluido</span>
+                            </div>
+                            <a href="#reserva" onclick="selectRancho('Rancho Cardones (hasta 3 pers)')" class="block text-center bg-adobe-600 hover:bg-adobe-700 text-white font-bold py-3 px-4 rounded-xl transition-colors text-sm shadow">
+                                Cotizar este Rancho
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA CABAÑA 3 -->
+                <div class="bg-adobe-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-adobe-100 flex flex-col h-full">
+                    <div class="relative h-60 overflow-hidden bg-gray-200">
+                        <img src="imagenes/cabana-cuadruple.jpg" alt="Rancho Montaña Familiar" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/a14226/ffffff?text=imagenes/cabana-cuadruple.jpg';">
+                        <span class="absolute top-4 right-4 bg-adobe-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow">
+                            Hasta 4 Personas
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Rancho Montaña</h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed min-h-[4rem]">
+                                Cabaña amplia de dos ambientes. Confort integral para grupos o familias de hasta 4 integrantes con amplio jardín.
+                            </p>
+                            <ul class="text-xs text-gray-600 space-y-2 mb-6">
+                                <li class="flex items-center gap-2">✅ Habitación principal + 2 camas simples</li>
+                                <li class="flex items-center gap-2">✅ Cocina de fuegos equipada</li>
+                                <li class="flex items-center gap-2">✅ Estar comedor salón rústico</li>
+                                <li class="flex items-center gap-2">✅ Patio individual privado con asador</li>
+                                <li class="flex items-center gap-2">✅ WiFi + Estacionamiento libre</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto">
+                            <div class="pt-4 border-t border-adobe-200 flex items-center justify-between mb-4">
+                                <span class="text-xs text-gray-500">Jardín amplio exclusivo</span>
+                                <span class="text-xs font-bold text-andes-green bg-andes-lightgreen px-2.5 py-1 rounded-md">Desayuno incluido</span>
+                            </div>
+                            <a href="#reserva" onclick="selectRancho('Rancho Montaña (hasta 4 pers)')" class="block text-center bg-gray-900 hover:bg-adobe-600 text-white font-bold py-3 px-4 rounded-xl transition-colors text-sm shadow">
+                                Cotizar este Rancho
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN EXPERIENCIAS: TREKKING CON LLAMAS Y DESAYUNO -->
+    <section id="experiencias" class="py-16 md:py-24 bg-adobe-100/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-adobe-600 font-bold text-sm tracking-wider uppercase block mb-2">Vivencias Unicas</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Nuestras Experiencias Destacadas</h2>
+                <p class="mt-4 text-gray-600 text-lg">
+                    Conectar con el entorno es caminar al ritmo andino y saborear lo autóctono.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <!-- Bloque Llama Trekking -->
+                <div class="order-2 md:order-1">
+                    <span class="text-andes-green font-bold text-xs uppercase tracking-wider block mb-2">Llama Trekking</span>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Caminatas guiadas por senderos ancestrales</h3>
+                    <p class="text-gray-600 text-base leading-relaxed mb-6">
+                        En <strong>EcoRanchos</strong> compartes el espacio libre con nuestras llamas. Realizamos paseos guiados por los antiguos caminos agrícolas de Maimará, donde las llamas llevan los aperos con la carga liviana para el mate.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-center gap-3"><strong>Relación de respeto:</strong> Llamas criadas en libertad y con amor.</li>
+                        <li class="flex items-center gap-3"><strong>Fotografía única:</strong> Postales inolvidables junto a los cerros multicolores.</li>
+                        <li class="flex items-center gap-3"><strong>Paso pausado:</strong> Diseñado para todas las edades.</li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2 rounded-3xl overflow-hidden shadow-lg border-4 border-white h-80 bg-gray-200">
+                    <img src="imagenes/experiencia-llamas.jpg" alt="Trekking con llamas en Maimará" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/800x600/2d5a27/ffffff?text=imagenes/experiencia-llamas.jpg';">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Bloque Gastronomía / Desayuno -->
+                <div class="rounded-3xl overflow-hidden shadow-lg border-4 border-white h-80 bg-gray-200">
+                    <img src="imagenes/desayuno-regional.jpg" alt="Desayuno regional con productos autóctonos" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/800x600/d4a373/ffffff?text=imagenes/desayuno-regional.jpg';">
+                </div>
+                <div>
+                    <span class="text-adobe-600 font-bold text-xs uppercase tracking-wider block mb-2">🍞 Sabores Locales</span>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Desayuno Regional de Campo</h3>
+                    <p class="text-gray-600 text-base leading-relaxed mb-6">
+                        Cada mañana te preparamos un desayuno artesanal con productos frescos de la zona para empezar la jornada con energía y sabor local.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-center gap-3">☕ Panes caseros horneados y bollos andinos.</li>
+                        <li class="flex items-center gap-3">🍯 Dulces regionales de frutas locales y miel pura.</li>
+                        <li class="flex items-center gap-3">🍵 Infusiones herbales autóctonas (coca, muña muña, té).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SUSTENTABILIDAD AMIGABLE -->
+    <section id="sustentabilidad" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-andes-green font-bold text-sm tracking-wider uppercase block mb-2">Conciencia Ambiental</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Un Alojamiento que Cuida la Tierra</h2>
+                <p class="mt-4 text-gray-600 text-lg">
+                    Diseñado en armonía con el ecosistema frágil de la Quebrada de Humahuaca para garantizar un impacto mínimo y una experiencia reconfortante.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tarjeta 1: Adobe -->
+                <div class="bg-adobe-50 p-8 rounded-3xl border border-adobe-100 shadow-sm">
+                    <div class="w-14 h-14 bg-adobe-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm">
+                        🧱
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Arquitectura Bioclimática</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Construcción en ladrillos de adobe elaborados con tierra local. Mantiene las cabañas frescas durante el día bajo el sol puneño y cálidas por la noche.
+                    </p>
+                </div>
+
+                <!-- Tarjeta 2: Baño Seco -->
+                <div class="bg-andes-lightgreen p-8 rounded-3xl border border-andes-green/20 shadow-sm">
+                    <div class="w-14 h-14 bg-andes-green text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm">
+                        💧
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Baños Secos Ecológicos</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Un sistema 100% inodoro, limpio y sustentable que nos permite ahorrar miles de litros de agua en la región semiárida sin contaminar napas.
+                    </p>
+                </div>
+
+                <!-- Tarjeta 3: Energía & Agua -->
+                <div class="bg-adobe-50 p-8 rounded-3xl border border-adobe-100 shadow-sm">
+                    <div class="w-14 h-14 bg-amber-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm">
+                        ☀️
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Energía Limpia y Reuso</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Aprovechamos la radiación solar para el calentamiento de agua y tratamos las aguas grises para el riego de nuestros cultivos y jardines.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Caja aclaratoria del Baño Seco sin palabras complejas -->
+            <div class="mt-12 bg-amber-50 border border-amber-200 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
+                <span class="text-4xl">🌱</span>
+                <div>
+                    <h4 class="text-base font-bold text-gray-900">¿Primera experiencia con baños ecológicos?</h4>
+                    <p class="text-xs sm:text-sm text-gray-600 mt-1">
+                        ¡Es sumamente sencillo y totalmente cómodo! Al ingresar a tu rancho te explicamos su funcionamiento en un minuto. Te encantará ser parte del cuidado activo de Maimará.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN ENTORNO Y UBICACIÓN -->
+    <section id="entorno" class="py-16 md:py-24 bg-adobe-100/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div>
+                    <span class="text-adobe-600 font-bold text-sm tracking-wider uppercase block mb-2">Ubicación Insuperable</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6">Maimará: El Valle del Arcoiris</h2>
+                    <p class="text-gray-600 text-base leading-relaxed mb-6">
+                        Maimará ("Estrella Caída" en lengua omaguaca) es el pueblo más tranquilo y pintoresco de la Quebrada. Ubicado estratégicamente a 5 minutos de Tilcara y a 20 minutos de Purmamarca.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="text-xl text-adobe-600">🎨</span>
+                            <p class="text-sm text-gray-700"><strong>Paleta del Pintor:</strong> Vista directa desde nuestro parque al cerro de franjas de colores.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-xl text-adobe-600">🍇</span>
+                            <p class="text-sm text-gray-700"><strong>Bodegas y Fincas:</strong> Zona agrícola por excelencia con viñedos de altura para visitar.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-xl text-adobe-600">🚗</span>
+                            <p class="text-sm text-gray-700"><strong>Acceso Ágil:</strong> A pocos metros de la Ruta Nacional 9 con estacionamiento dentro del predio.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white h-96 bg-gray-200">
+                    <img src="imagenes/entorno-maimara.jpg" alt="Entorno natural de Maimará y Paleta del Pintor" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/800x600/a14226/ffffff?text=imagenes/entorno-maimara.jpg';">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MOTOR DE RESERVA DIRECTO A WHATSAPP -->
+    <section id="reserva" class="py-16 md:py-24 bg-gradient-to-br from-adobe-800 via-adobe-700 to-amber-900 text-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-10">
+                <span class="bg-amber-400 text-gray-900 font-extrabold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+                    🎉 Reserva Directa Sin Intermediarios
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold mt-4 mb-3">Cotiza tu Estadía al Instante</h2>
+                <p class="text-adobe-100 text-base sm:text-lg max-w-xl mx-auto">
+                    Completa tus datos para calcular las noches. Se enviará una solicitud preformateada a nuestro WhatsApp oficial con el <strong>10% de descuento aplicable</strong>.
+                </p>
+            </div>
+
+            <!-- FORMULARIO DE RESERVA INTERACTIVO -->
+            <div class="bg-white text-gray-800 p-6 sm:p-10 rounded-3xl shadow-2xl border border-white/20">
+                <form id="booking-form" onsubmit="sendWhatsAppReservation(event)" class="space-y-6">
+                    
+                    <!-- Fila 1: Fechas Checkin - Checkout -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
+                                📅 Fecha de Check-in (Ingreso)
+                            </label>
+                            <input type="date" id="checkin" required onchange="calculateNights()" class="w-full p-3.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-adobe-500 focus:outline-none text-sm font-medium">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
+                                📅 Fecha de Check-out (Salida)
+                            </label>
+                            <input type="date" id="checkout" required onchange="calculateNights()" class="w-full p-3.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-adobe-500 focus:outline-none text-sm font-medium">
+                        </div>
+                    </div>
+
+                    <!-- Fila 2: Alojamiento y Huéspedes -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
+                                🏡 Cabaña / Rancho Seleccionado
+                            </label>
+                            <select id="rancho-type" required class="w-full p-3.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-adobe-500 focus:outline-none text-sm font-medium">
+                                <option value="Rancho Intimidad (hasta 2 pers)">Rancho Intimidad (hasta 2 personas)</option>
+                                <option value="Rancho Cardones (hasta 3 pers)">Rancho Cardones (hasta 3 personas)</option>
+                                <option value="Rancho Montaña (hasta 4 pers)">Rancho Montaña (hasta 4 personas)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
+                                👥 Cantidad de Huéspedes
+                            </label>
+                            <select id="huespedes" class="w-full p-3.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-adobe-500 focus:outline-none text-sm font-medium">
+                                <option value="1 Persona">1 Persona</option>
+                                <option value="2 Personas" selected>2 Personas</option>
+                                <option value="3 Personas">3 Personas</option>
+                                <option value="4 Personas">4 Personas</option>
+                                <option value="5+ Personas">Grupo / Familia (5+ personas)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Fila 3: Nombre y Mensaje Adicional -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
+                            👤 Tu Nombre Completo
+                        </label>
+                        <input type="text" id="nombre" placeholder="Ej: María Laura González" required class="w-full p-3.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-adobe-500 focus:outline-none text-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
+                            💬 Consultas Adicionales / Comentarios (Opcional)
+                        </label>
+                        <textarea id="mensaje" rows="2" placeholder="Ej: ¿Viajamos con una mascota pequeña / A qué hora es el check-in?" class="w-full p-3.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-adobe-500 focus:outline-none text-sm"></textarea>
+                    </div>
+
+                    <!-- Resumen dinámico de Noches -->
+                    <div id="resumen-noches" class="hidden bg-andes-lightgreen p-4 rounded-2xl border border-andes-green/30 text-andes-green text-sm flex justify-between items-center">
+                        <div>
+                            <span class="font-bold block text-base" id="texto-noches">0 noches calculadas</span>
+                            <span class="text-xs text-gray-600">Aplica 10% de descuento directo por WhatsApp</span>
+                        </div>
+                        <span class="text-2xl">✨</span>
+                    </div>
+
+                    <!-- Botón Enviar a WhatsApp -->
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-base sm:text-lg py-4 px-6 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-3">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                        </svg>
+                        <span>Enviar Reserva por WhatsApp (+543884735221)</span>
+                    </button>
+                    <p class="text-center text-xs text-gray-500">
+                        🔒 Respuesta rápida asegurada para confirmar fechas disponibles.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Y SECCIÓN DE CONTACTO -->
+    <footer id="contacto" class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="imagenes/logo.png" alt="Logo Footer" class="w-10 h-10 object-contain rounded-full bg-white p-1" onerror="this.onerror=null; this.src='https://placehold.co/80x80/d97757/ffffff?text=Eco';">
+                        <span class="text-xl font-bold text-white">EcoRanchos</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                        Dormir con Llamas en Maimará. Experiencia sustentable y refugio natural en el corazón de la Quebrada de Humahuaca, Jujuy.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Menú Rápido</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#inicio" class="hover:text-amber-400 transition-colors">Inicio</a></li>
+                        <li><a href="#alojamiento" class="hover:text-amber-400 transition-colors">Alojamiento</a></li>
+                        <li><a href="#experiencias" class="hover:text-amber-400 transition-colors">Trekking con Llamas</a></li>
+                        <li><a href="#sustentabilidad" class="hover:text-amber-400 transition-colors">Sustentabilidad</a></li>
+                        <li><a href="#reserva" class="hover:text-amber-400 transition-colors">Reservar -10% OFF</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Contacto Directo</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li>📍 Maimará, Quebrada de Humahuaca, Jujuy, Argentina</li>
+                        <li>📱 WhatsApp Oficial: +54 388 473-5221</li>
+                        <li>🌐 Web: ecoranchos.wordpress.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 text-center text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Dormir con Llamas - EcoRanchos. Todos los derechos reservados.</p>
+                <p class="text-amber-400 font-medium">Turismo Sustentable & Responsable 🌾</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DIRECTO DE WHATSAPP -->
+    <a href="https://wa.me/543884735221?text=Hola!%20Quisiera%20consultar%20por%20disponibilidad%20en%20Dormir%20con%20Llamas%20EcoRanchos" 
+       target="_blank" 
+       aria-label="Contactar por WhatsApp"
+       class="fixed bottom-6 right-6 bg-emerald-500 text-white p-4 rounded-full shadow-2xl hover:bg-emerald-600 transition-all z-50 transform hover:scale-110 flex items-center justify-center">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
+
+    <!-- LÓGICA DE INTERACCIÓN Y RESERVAS -->
+    <script>
+        // Menú responsive móvil
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Configurar fechas por defecto
+        window.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+
+            const formatDate = (date) => date.toISOString().split('T')[0];
+
+            const checkinInput = document.getElementById('checkin');
+            const checkoutInput = document.getElementById('checkout');
+
+            checkinInput.min = formatDate(today);
+            checkoutInput.min = formatDate(tomorrow);
+        });
+
+        // Función para seleccionar rancho desde las tarjetas
+        function selectRancho(ranchoName) {
+            const selectElem = document.getElementById('rancho-type');
+            selectElem.value = ranchoName;
+        }
+
+        // Calcular número de noches
+        function calculateNights() {
+            const checkin = new Date(document.getElementById('checkin').value);
+            const checkout = new Date(document.getElementById('checkout').value);
+            const resumenContainer = document.getElementById('resumen-noches');
+            const textoNoches = document.getElementById('texto-noches');
+
+            if (checkin && checkout && checkout > checkin) {
+                const timeDiff = checkout.getTime() - checkin.getTime();
+                const nights = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                
+                textoNoches.innerText = `${nights} ${nights === 1 ? 'noche' : 'noches'} calculadas (-10% OFF)`;
+                resumenContainer.classList.remove('hidden');
+                return nights;
+            } else {
+                resumenContainer.classList.add('hidden');
+                return 0;
+            }
+        }
+
+        // Enviar Reserva Formateada a WhatsApp
+        function sendWhatsAppReservation(e) {
+            e.preventDefault();
+
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+            const rancho = document.getElementById('rancho-type').value;
+            const huespedes = document.getElementById('huespedes').value;
+            const nombre = document.getElementById('nombre').value;
+            const mensajeExtra = document.getElementById('mensaje').value;
+
+            const noches = calculateNights();
+            const textoNoches = noches > 0 ? `${noches} noche(s)` : 'A confirmar';
+
+            // Armar mensaje formateado para WhatsApp
+            let mensaje = `Hola EcoRanchos! 🦙 Quisiera consultar disponibilidad y solicitar la cotización con el 10% de descuento directo:\n\n`;
+            mensaje += `👤 *Nombre:* ${nombre}\n`;
+            mensaje += `🏡 *Cabaña/Rancho:* ${rancho}\n`;
+            mensaje += `📅 *Check-in:* ${checkin}\n`;
+            mensaje += `📅 *Check-out:* ${checkout}\n`;
+            mensaje += `🌙 *Estadía:* ${textoNoches}\n`;
+            mensaje += `👥 *Huéspedes:* ${huespedes}\n`;
+            if (mensajeExtra.trim() !== '') {
+                mensaje += `💬 *Consulta adicional:* ${mensajeExtra}\n`;
+            }
+            mensaje += `\n¡Aguardó confirmación! Muchas gracias.`;
+
+            // Codificación de URL para WhatsApp (+543884735221)
+            const whatsappNumber = "543884735221";
+            const encodedText = encodeURIComponent(mensaje);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
